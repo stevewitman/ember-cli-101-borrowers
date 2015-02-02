@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       return true;
     }
   },
-  // model: function() {
-  //   return this.store.createRecord('friend');
-  // }
+  model: function() {
+    return this.store.createRecord('friend');
+  }
 });

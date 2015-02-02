@@ -1,4 +1,10 @@
 <form {{action "save" on="submit"}}>
+<h2>{{errorMessage}}</h2>
+  <div>
+    <h2>Friends Details</h2>
+      <p>{{model.firstName}}</p>
+      <p>{{model.lastName}}</p>
+  </div>
   <p>
     <label>First Name:
       {{input value=model.firstName}}
@@ -18,6 +24,9 @@
     <label>Twitter:
       {{input value=model.twitter}}
     </label>
+  </p>
+  <p>
+    {{input type='checkbox' name=trusted}}
   </p>
 <input type="submit" value="Save"/>
 <button {{action "cancel"}}>Cancel</button>
