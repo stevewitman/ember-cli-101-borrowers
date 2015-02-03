@@ -6,8 +6,15 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('friends', function() { // see page 23
+  this.resource('friends', function() {
+    // see page 23 & 33
     this.route('new');
+    this.route('show', {
+      path: ":friend_id"
+    });
+    this.route("edit", {
+      path: ":friend_id/edit"
+    });
   });
 });
 

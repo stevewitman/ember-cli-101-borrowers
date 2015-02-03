@@ -15,8 +15,15 @@ export default Ember.Controller.extend({
   ),
   actions: {
     save: function() {
-      console.log('+- save action in friends new controller');
-      return true;
+      if (this.get('isValid')) {
+        var _this = this;
+      this.get('model').save().then(function(friend) {
+      _this.transitionToRoute('friends.show', friend);
+    });
+    } else {
+      this.set('errorMessage', 'You have to fill all the fields');
+    }
+    return false;
     },
     cancel: function() {
       console.log('+- cancel action in friends new controller');
